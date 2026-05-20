@@ -30,7 +30,6 @@ public class EstudianteInstitucional {
 
     // =========================
     // CONSTRUCTOR VACÍO
-    // =========================
 
     // Asigna valores por defecto
     public EstudianteInstitucional() {
