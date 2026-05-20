@@ -33,6 +33,17 @@ public class Main {
                         true,
                         5.8
                 );
+                      // =========================
+        // OBJETO 3
+        // =========================
+               EstudianteInstitucional estudiante3 =
+                new EstudianteInstitucional(
+                        "Catalina",
+                        15,
+                        "Media",
+                        true,
+                        6.8
+                );
 
         // =========================
         // MOSTRAR DATOS
@@ -43,6 +54,8 @@ public class Main {
         System.out.println("-------------------");
 
         System.out.println(estudiante2);
+            System.out.println("-------------------");
+               System.out.println(estudiante3);
 
     }
 
