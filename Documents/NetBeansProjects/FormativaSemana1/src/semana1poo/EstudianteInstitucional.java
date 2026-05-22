@@ -9,26 +9,19 @@ package semana1poo;
 
 public class EstudianteInstitucional {
 
-    // =========================
     // ATRIBUTOS PRIVADOS
-    // =========================
 
     // Nombre del estudiante
     private String nombre;
-
     // Edad del estudiante
     private int edad;
-
     // Carrera que estudia
     private String carrera;
-
     // Estado de matrícula (true = activa / false = inactiva)
     private boolean estadoMatricula;
-
     // Promedio del estudiante
     private double promedio;
 
-    // =========================
     // CONSTRUCTOR VACÍO
 
     // Asigna valores por defecto
@@ -41,9 +34,7 @@ public class EstudianteInstitucional {
         this.promedio = 0;
 
     }
-    // =========================
     // CONSTRUCTOR CON PARÁMETROS
-    // =========================
 
     // Inicializa todos los atributos
     public EstudianteInstitucional(
@@ -60,10 +51,7 @@ public class EstudianteInstitucional {
         this.promedio = promedio;
 
     }
-
-    // =========================
     // GETTERS
-    // =========================
 
     // Obtener nombre
     public String getNombre() {
@@ -90,9 +78,7 @@ public class EstudianteInstitucional {
         return promedio;
     }
 
-    // =========================
     // SETTERS
-    // =========================
 
     // Modificar nombre
     public void setNombre(String nombre) {
@@ -119,9 +105,7 @@ public class EstudianteInstitucional {
         this.promedio = promedio;
     }
 
-    // =========================
     // MÉTODO toString
-    // =========================
 
     // Mostrar información del objeto
     @Override
