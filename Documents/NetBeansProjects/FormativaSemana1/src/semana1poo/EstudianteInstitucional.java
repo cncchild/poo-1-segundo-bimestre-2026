@@ -103,7 +103,6 @@ public class EstudianteInstitucional {
         } else {
             System.out.println("Error: la edad debe ser mayor a 0");
         }
-
     }
 
     // Modificar carrera
@@ -133,9 +132,7 @@ public class EstudianteInstitucional {
         }
 
     }
-
     // MÉTODO toString
-
     // Mostrar información del objeto
     @Override
     public String toString() {
