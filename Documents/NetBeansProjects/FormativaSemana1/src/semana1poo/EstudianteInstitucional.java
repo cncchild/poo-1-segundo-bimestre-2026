@@ -44,7 +44,6 @@ public class EstudianteInstitucional {
             boolean estadoMatricula,
             double promedio) {
 
-        this.nombre = nombre;
         setNombre(nombre);
         setEdad(edad);
         setCarrera(carrera);
