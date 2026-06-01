@@ -45,10 +45,11 @@ public class EstudianteInstitucional {
             double promedio) {
 
         this.nombre = nombre;
-        this.edad = edad;
-        this.carrera = carrera;
-        this.estadoMatricula = estadoMatricula;
-        this.promedio = promedio;
+        setNombre(nombre);
+        setEdad(edad);
+        setCarrera(carrera);
+        setEstadoMatricula(estadoMatricula);
+        setPromedio(promedio);
 
     }
     // GETTERS
@@ -92,9 +93,7 @@ public class EstudianteInstitucional {
         } else {
 
             System.out.println("Error: el nombre no puede estar vacío y debe tener al menos 3 caracteres.");
-
         }
-
     }
 
     // Modificar edad
@@ -115,7 +114,7 @@ public class EstudianteInstitucional {
                 carrera.trim().length() >= 3) {
             this.carrera = carrera;
         } else {
-            System.out.println("Error: la carrera no puede estar vacía.");
+            System.out.println("Error: la carrera no puede estar vacía y debe tener al menos 3 caracteres");
         }
 
     }
