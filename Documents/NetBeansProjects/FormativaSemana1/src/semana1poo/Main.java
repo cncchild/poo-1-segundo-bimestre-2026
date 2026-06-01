@@ -10,12 +10,7 @@ public class Main {
         System.setOut(new java.io.PrintStream(System.out, true, java.nio.charset.StandardCharsets.UTF_8));
         // OBJETO 1
         EstudianteInstitucional estudiante1 =  new EstudianteInstitucional(
-                        "Cristian",
-                        30,
-                        "Diseño y Desarrollo Web",
-                        true,
-                        6.5
-                );
+                        "Cristian", 30, "Diseño y Desarrollo Web", true, 6.5);
         // OBJETO 2
 
         EstudianteInstitucional estudiante2 = new EstudianteInstitucional(
@@ -25,12 +20,24 @@ public class Main {
                         true,
                         5.8
                 );
+        // OBJETO 3 (constructor vacío)
+        EstudianteInstitucional estudiante3 = new EstudianteInstitucional();
+
+        // Modificar valores mediante setters
+        estudiante3.setNombre("Valentina");
+        estudiante3.setEdad(20);
+        estudiante3.setCarrera("Ingeniería Informática");
+        estudiante3.setEstadoMatricula(true);
+        estudiante3.setPromedio(6.2);
+
+
         // MOSTRAR DATOS
         System.out.println(estudiante1);
         System.out.println("-------------------");
         System.out.println(estudiante2);
         System.out.println("-------------------");
-
+        System.out.println(estudiante3);
+        System.out.println("-------------------");
     }
 
 }

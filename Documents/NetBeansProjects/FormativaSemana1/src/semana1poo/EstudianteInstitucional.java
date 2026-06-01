@@ -27,9 +27,9 @@ public class EstudianteInstitucional {
     // Asigna valores por defecto
     public EstudianteInstitucional() {
 
-        this.nombre = "Sin nombre";
+        this.nombre = "nombre por defecto";
         this.edad = 0;
-        this.carrera = "Sin carrera";
+        this.carrera = "carrera por defecto";
         this.estadoMatricula = true;
         this.promedio = 0;
 
@@ -82,27 +82,58 @@ public class EstudianteInstitucional {
 
     // Modificar nombre
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+
+        if (nombre != null &&
+            !nombre.trim().isEmpty() &&
+            nombre.trim().length() >= 3) {
+
+            this.nombre = nombre;
+
+        } else {
+
+            System.out.println("Error: el nombre no puede estar vacío y debe tener al menos 3 caracteres.");
+
+        }
+
     }
 
     // Modificar edad
     public void setEdad(int edad) {
-        this.edad = edad;
+
+        if (edad > 0) {
+            this.edad = edad;
+        } else {
+            System.out.println("Error: la edad debe ser mayor a 0");
+        }
+
     }
 
     // Modificar carrera
     public void setCarrera(String carrera) {
-        this.carrera = carrera;
+
+        if (carrera != null && !carrera.trim().isEmpty() &&
+                carrera.trim().length() >= 3) {
+            this.carrera = carrera;
+        } else {
+            System.out.println("Error: la carrera no puede estar vacía.");
+        }
+
     }
 
     // Modificar estado matrícula
     public void setEstadoMatricula(boolean estadoMatricula) {
         this.estadoMatricula = estadoMatricula;
     }
-
+    
     // Modificar promedio
     public void setPromedio(double promedio) {
-        this.promedio = promedio;
+
+        if (promedio >= 1.0 && promedio <= 7.0) {
+            this.promedio = promedio;
+        } else {
+            System.out.println("Error: el promedio debe estar entre 1.0 y 7.0");
+        }
+
     }
 
     // MÉTODO toString
