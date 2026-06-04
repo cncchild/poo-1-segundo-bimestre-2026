@@ -120,5 +120,19 @@ public class Validator {
                         "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$");
 
     }
+    
+     /**
+     * Valida el formato de un horario.
+     *
+     * @param horario correo electrónico a validar
+     * @return true si el correo tiene un formato válido
+     */
+    public static boolean validarHorario(String horario) {
+
+        return noEsVacio(horario)
+                && horario.matches(
+                        "^([01]\\d|2[0-3]):[0-5]\\d\\s-\\s([01]\\d|2[0-3]):[0-5]\\d$");
+
+    }
 
 }

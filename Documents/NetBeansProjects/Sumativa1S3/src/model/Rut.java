@@ -25,8 +25,6 @@ public final class Rut {
 
         setRut(rut);
 
-
-
     }
           /**
      * Obtiene el RUT de la persona.
@@ -55,7 +53,6 @@ public final class Rut {
                 "El formato del rut es inválido.");
 
     }
-
     this.rut = rut.trim();
 }
      /**
