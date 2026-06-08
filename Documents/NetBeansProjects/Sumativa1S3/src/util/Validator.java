@@ -134,5 +134,19 @@ public class Validator {
                         "^([01]\\d|2[0-3]):[0-5]\\d\\s-\\s([01]\\d|2[0-3]):[0-5]\\d$");
 
     }
+    
+    /**
+    * Valida el identificador del cliente.
+    *
+    * Debe ser un número mayor que cero.
+    *
+    * @param idCliente identificador del cliente
+    * @return true si el identificador es válido
+    */
+   public static boolean validarIdCliente(int idCliente) {
+
+       return idCliente > 0;
+
+   }
 
 }

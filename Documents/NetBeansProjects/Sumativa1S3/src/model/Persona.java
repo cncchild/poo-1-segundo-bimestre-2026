@@ -18,7 +18,7 @@ import util.Validator;
  *
  * @author ADMIN
  */
-public final class Persona {
+public class Persona {
 
     /**
      * Nombre de la persona.
@@ -238,7 +238,4 @@ public Rut getRut() {
                 + "\nRut: " + rut; 
 
     }
-
-
-
 }

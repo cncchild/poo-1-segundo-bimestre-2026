@@ -4,7 +4,7 @@
  */
 package app;
 
-import model.Persona;
+import model.Cliente;
 import model.Direccion;
 import model.Rut;
 import model.TourCultural;
@@ -47,12 +47,13 @@ public class Main {
             Rut rut = new Rut(
                     "12345678-9"
             );
-            Persona persona = new Persona(
+            Cliente cliente1 = new Cliente(
                     "Cristian",
                     "+56912345678",
                     "correo@gmail.com",
                     direccion,
-                    rut
+                    rut,
+                     1
             );
             // =========================
             // TOURS (HERENCIA)
@@ -90,7 +91,7 @@ public class Main {
             // =========================
 
             System.out.println("========== PERSONA ===========");
-            System.out.println(persona);
+            System.out.println(cliente1);
 
             System.out.println("\n========== TOURS =============");
             System.out.println("\n========== Cultural ==========");
