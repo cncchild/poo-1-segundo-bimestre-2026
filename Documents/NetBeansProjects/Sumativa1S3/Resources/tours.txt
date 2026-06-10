@@ -1,0 +1,15 @@
+Ruta Patrimonial;Cultural;25000
+Volcan Osorno;Aventura;45000
+Saltos del Petrohue;Aventura;35000
+Lago Llanquihue;Navegacion;18000
+Ruta Gastronomica;Gastronomico;30000
+Isla Tenglo;Cultural;22000
+Termas de Puyehue;Bienestar;40000
+Parque Vicente Perez Rosales;Naturaleza;28000
+Circuito Frutillar;Cultural;15000
+Kayak Rio Maullin;Aventura;32000
+Tour Puerto Varas;Cultural;20000
+Pesca Recreativa;Deportivo;38000
+Observacion de Aves;Naturaleza;17000
+Tour Chiloe;Cultural;55000
+Rafting Rio Petrohue;Aventura;48000

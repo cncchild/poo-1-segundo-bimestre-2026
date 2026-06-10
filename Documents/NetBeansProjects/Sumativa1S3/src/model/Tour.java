@@ -29,6 +29,10 @@ public  class Tour {
      */
     private String nombre;
 
+     /**
+     * Tipo del tour.
+     */
+    private String  tipo;
     /**
      * Precio del tour.
      */
@@ -38,13 +42,16 @@ public  class Tour {
      * Constructor de la clase Tour.
      *
      * @param nombre nombre del tour
+     * @param tipo
      * @param precio precio del tour
      */
-    public Tour(String nombre, double precio) {
+        public Tour(String nombre, String tipo, double precio) {
 
-        setNombre(nombre);
-        setPrecio(precio);
-    }
+           setNombre(nombre);
+           setTipo(tipo);
+           setPrecio(precio);
+
+       }
     /**
      * Obtiene el nombre del tour.
      *
@@ -53,7 +60,14 @@ public  class Tour {
     public String getNombre() {
         return nombre;
     }
-
+  /**
+     * Obtiene el tipo del tour.
+     *
+     * @return tipo del tour
+     */
+    public String getTipo() {
+        return tipo;
+    }
     /**
      * Obtiene el precio del tour.
      *
@@ -85,7 +99,28 @@ public  class Tour {
 
         this.nombre = nombre.trim();
     }
+  /**
+     * Modifica el tipo del tour.
+     *
+     * @param tipo nuevo tipo del tour
+     * @throws IllegalArgumentException si el nombre es inválido
+     */
+    public void setTipo(String tipo) {
 
+        if (!Validator.noEsVacio(tipo)) {
+
+            throw new IllegalArgumentException(
+                    "El tipo del tour no puede estar vacío.");
+
+        } else if (!Validator.longitudMinima(tipo, 3)) {
+
+            throw new IllegalArgumentException(
+                    "El tipo del tour debe tener al menos 3 caracteres.");
+
+        }
+
+        this.tipo = tipo.trim();
+    }
     /**
      * Modifica el precio del tour.
      *
@@ -94,7 +129,7 @@ public  class Tour {
      */
     public void setPrecio(double precio) {
 
-        if (precio < 0) {
+        if (precio <= 0) {
 
             throw new IllegalArgumentException(
                     "El precio debe ser mayor a cero.");
@@ -113,6 +148,7 @@ public  class Tour {
     public String toString() {
 
         return "Tour: " + nombre
+                + "\nTipo: " + tipo
                 + "\nPrecio: $" + precio;
 
     }
