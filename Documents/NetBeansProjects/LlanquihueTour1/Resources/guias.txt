@@ -1,0 +1,5 @@
+1;Carlos Fuentes;987111111;carlos@tour.cl;Los Pinos;Santiago;Region Metropolitana;12345678-9
+2;Ana Rojas;987222222;ana@tour.cl;Las Flores;Maipu;Region Metropolitana;11111111-1
+3;Luis Herrera;987333333;luis@tour.cl;San Martin;Providencia;Region Metropolitana;22222222-2
+4;Camila Soto;987444444;camila@tour.cl;Brasil;Nunoa;Region Metropolitana;33333333-3
+5;Jorge Díaz;987555555;jorge@tour.cl;O'Higgins;La Florida;Region Metropolitana;44444444-4

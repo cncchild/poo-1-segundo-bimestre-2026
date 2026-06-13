@@ -1,0 +1,5 @@
+1;Juan Pérez;987654321;juan@gmail.com;Los Pinos;Santiago;Region Metropolitana;12345678-9
+2;María González;912345678;maria@gmail.com;Las Flores;Puente Alto;Region Metropolitana;11111111-1
+3;Pedro Soto;998877665;pedro@gmail.com;San Martín;Maipú;Region Metropolitana;22222222-2
+4;Carla Muñoz;955667788;carla@gmail.com;O'Higgins;La Florida;Region Metropolitana;33333333-3
+5;Diego Rojas;944556677;diego@gmail.com;Brasil;Ñuñoa;Region Metropolitana;44444444-4
