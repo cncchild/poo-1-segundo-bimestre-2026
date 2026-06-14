@@ -7,6 +7,7 @@
 
 import model.Tour;
 import model.Guia;
+  import model.Conductor;
 
 import model.Transporte;
 import java.io.BufferedReader;
@@ -57,7 +58,7 @@ import java.util.ArrayList;
             while ((linea = lector.readLine()) != null) {
                 
                 String[] datos = linea.split(";");
-     if (datos.length == 6) {
+     if (datos.length == 7) {
 
     int idTour = Integer.parseInt(datos[0]);
     String nombre = datos[1];
@@ -66,12 +67,15 @@ import java.util.ArrayList;
 
     int idGuia = Integer.parseInt(datos[4]);
     int idTransporte = Integer.parseInt(datos[5]);
+        int idConductor = Integer.parseInt(datos[6]);
 
     GestorDatosGuia gestorGuia =
             new GestorDatosGuia();
 
     GestorDatosTransporte gestorTransporte =
             new GestorDatosTransporte();
+    GestorDatosConductor gestorConductor =
+        new GestorDatosConductor();
 
     Guia guia =
             gestorGuia.buscarPorId(idGuia);
@@ -79,13 +83,17 @@ import java.util.ArrayList;
     Transporte transporte =
             gestorTransporte.buscarPorId(idTransporte);
 
+        Conductor conductor =
+            gestorConductor.buscarPorId(idConductor);
+        
     Tour tour = new Tour(
             idTour,
             nombre,
             descripcion,
             precio,
             guia,
-            transporte
+            transporte,
+            conductor
     );
 
     listaTours.add(tour);

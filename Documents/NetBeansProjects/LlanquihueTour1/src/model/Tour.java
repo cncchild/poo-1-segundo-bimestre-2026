@@ -16,6 +16,7 @@ public class Tour {
     private double precio;
     private Guia guia;
     private Transporte transporte;
+    private Conductor conductor;
 
     /**
      * Constructor de la clase Tour.
@@ -26,13 +27,15 @@ public class Tour {
      * @param precio precio del tour
      * @param guia guía asignado
      * @param transporte transporte asignado
+     * @param conductor
      */
     public Tour(int idTour,
                 String nombre,
                 String descripcion,
                 double precio,
                 Guia guia,
-                Transporte transporte) {
+                Transporte transporte,
+                Conductor conductor) {
 
         setIdTour(idTour);
         setNombre(nombre);
@@ -40,6 +43,7 @@ public class Tour {
         setPrecio(precio);
         setGuia(guia);
         setTransporte(transporte);
+            setConductor(conductor);
     }
 
     public int getIdTour() {
@@ -115,7 +119,7 @@ public class Tour {
     public Transporte getTransporte() {
         return transporte;
     }
-
+    
     public void setTransporte(Transporte transporte) {
 
         if (transporte == null) {
@@ -125,7 +129,20 @@ public class Tour {
 
         this.transporte = transporte;
     }
+    
+ public Conductor getConductor() {
+        return conductor;
+    }
+ 
+     public void setConductor(Conductor conductor) {
 
+        if (conductor == null) {
+            throw new IllegalArgumentException(
+                    "El Conductor no puede ser nulo.");
+        }
+
+        this.conductor = conductor;
+    }
     @Override
     public String toString() {
 
@@ -134,6 +151,7 @@ public class Tour {
                 + "\nDescripción: " + descripcion
                 + "\nPrecio: $" + precio
                 + "\nGuía: " + guia.getNombre()
-                + "\nTransporte: " + transporte.getTipoVehiculo();
+                + "\nTransporte: " + transporte.getTipoVehiculo()
+        + "\nConductor: " + conductor.getNombre();
     }
 }
