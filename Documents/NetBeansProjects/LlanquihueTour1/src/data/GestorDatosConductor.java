@@ -8,22 +8,39 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+
 import model.Conductor;
 import model.Direccion;
 import model.Rut;
 
 /**
+ * Clase encargada de cargar los conductores
+ * almacenados en el archivo conductor.txt.
+ *
+ * Permite leer los registros del archivo,
+ * crear objetos de tipo Conductor y
+ * almacenarlos en una colección ArrayList.
  *
  * @author ADMIN
  */
 public class GestorDatosConductor {
-        public ArrayList<Conductor> cargarConductor() {
-        
-        ArrayList<Conductor> listaConductor = new ArrayList<>();
+
+    /**
+     * Carga todos los conductores desde
+     * el archivo conductor.txt.
+     *
+     * @return lista de conductores cargados
+     * desde el archivo
+     */
+    public ArrayList<Conductor> cargarConductor() {
+
+        ArrayList<Conductor> listaConductor =
+                new ArrayList<>();
 
         try (BufferedReader lector =
                 new BufferedReader(
-                        new FileReader("Resources/conductor.txt"))) {
+                        new FileReader(
+                                "Resources/conductor.txt"))) {
 
             String linea;
 
@@ -56,7 +73,7 @@ public class GestorDatosConductor {
                     Rut rut =
                             new Rut(rutTexto);
 
-                    Conductor conductor=
+                    Conductor conductor =
                             new Conductor(
                                     nombre,
                                     telefono,
@@ -80,16 +97,30 @@ public class GestorDatosConductor {
 
         return listaConductor;
     }
+
+    /**
+     * Busca un conductor utilizando
+     * su identificador.
+     *
+     * @param idConductor identificador
+     * del conductor a buscar
+     * @return objeto Conductor encontrado
+     * o null si no existe
+     */
     public Conductor buscarPorId(int idConductor) {
-    ArrayList<Conductor> lista = cargarConductor();
 
-    for (Conductor conductor : lista) {
-        if (conductor.getIdConductor() == idConductor) {
-            return conductor;
+        ArrayList<Conductor> lista =
+                cargarConductor();
+
+        for (Conductor conductor : lista) {
+
+            if (conductor.getIdConductor()
+                    == idConductor) {
+
+                return conductor;
+            }
         }
+
+        return null;
     }
-
-    return null;
-
-}
 }

@@ -3,31 +3,37 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package ui;
+
 import data.GestorDatosCliente;
 import data.GestorDatosGuia;
 import data.GestorDatosTour;
 import data.GestorDatosTransporte;
-import data.GestorDatosConductor;
+import data.GestorDatosReserva;
+
+import model.Reserva;
 import model.Cliente;
 import model.Guia;
 import model.Tour;
 import model.Transporte;
-import model.Conductor;
+
 import java.util.ArrayList;
 
 /**
  * Clase principal de la aplicación.
  *
- * Esta clase permite probar la carga de datos desde
- * los archivos de texto mediante los gestores de datos.
+ * Esta clase permite probar la carga de datos
+ * desde los archivos de texto mediante los
+ * distintos gestores de datos.
  *
  * Muestra por consola la información de:
  * - Guías turísticos.
+ * - Clientes registrados.
  * - Transportes disponibles.
  * - Tours registrados.
+ * - Reservas realizadas.
  *
- * Utiliza colecciones ArrayList para almacenar los
- * objetos cargados desde los archivos externos.
+ * Utiliza colecciones ArrayList para almacenar
+ * los objetos cargados desde los archivos externos.
  *
  * @author ADMIN
  */
@@ -36,9 +42,13 @@ public class Main {
     /**
      * Método principal de ejecución.
      *
-     * Carga y muestra por consola los guías,
-     * transportes y tours almacenados en los
-     * archivos de texto del sistema.
+     * Carga y muestra por consola la información
+     * almacenada en los distintos archivos de datos
+     * del sistema.
+     *
+     * Permite verificar el correcto funcionamiento
+     * de los gestores de datos y la creación de
+     * los objetos del modelo.
      *
      * @param args argumentos de línea de comandos
      */
@@ -58,6 +68,7 @@ public class Main {
             System.out.println(guia);
             System.out.println("----------------");
         }
+
         // Ver todos los clientes
         GestorDatosCliente gestorCliente =
                 new GestorDatosCliente();
@@ -72,6 +83,7 @@ public class Main {
             System.out.println(cliente);
             System.out.println("----------------");
         }
+
         // Ver todos los transportes
         GestorDatosTransporte gestorTransporte =
                 new GestorDatosTransporte();
@@ -99,6 +111,21 @@ public class Main {
         for (Tour tour : listaTours) {
 
             System.out.println(tour);
+            System.out.println("----------------");
+        }
+
+        // Ver todas las reservas
+        GestorDatosReserva gestorReserva =
+                new GestorDatosReserva();
+
+        ArrayList<Reserva> listaReservas =
+                gestorReserva.cargarReservas();
+
+        System.out.println("=== RESERVAS ===");
+
+        for (Reserva reserva : listaReservas) {
+
+            System.out.println(reserva);
             System.out.println("----------------");
         }
     }

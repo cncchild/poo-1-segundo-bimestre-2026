@@ -8,6 +8,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+
 import model.Cliente;
 import model.Direccion;
 import model.Rut;
@@ -16,24 +17,34 @@ import model.Rut;
  * Clase encargada de cargar los clientes
  * almacenados en el archivo clientes.txt.
  *
+ * Permite leer los registros del archivo,
+ * crear objetos de tipo Cliente y
+ * almacenarlos en una colección ArrayList.
+ *
  * @author ADMIN
  */
 public class GestorDatosCliente {
 
     /**
-     * Carga todos los clientes desde el archivo.
+     * Colección utilizada para almacenar
+     * los clientes cargados en memoria.
+     */
+    private ArrayList<Cliente> clientes = new ArrayList<>();
+
+    /**
+     * Carga todos los clientes desde
+     * el archivo clientes.txt.
      *
-     * @return lista de clientes
+     * @return lista de clientes cargados
+     * desde el archivo
      */
     public ArrayList<Cliente> cargarClientes() {
 
-        ArrayList<Cliente> listaClientes =
-                new ArrayList<>();
+        ArrayList<Cliente> listaClientes = new ArrayList<>();
 
         try (BufferedReader lector =
-                new BufferedReader(
-                        new FileReader(
-                                "Resources/clientes.txt"))) {
+                     new BufferedReader(
+                             new FileReader("Resources/clientes.txt"))) {
 
             String linea;
 
@@ -43,9 +54,7 @@ public class GestorDatosCliente {
 
                 if (datos.length == 8) {
 
-                    int idCliente =
-                            Integer.parseInt(datos[0]);
-
+                    int idCliente = Integer.parseInt(datos[0]);
                     String nombre = datos[1];
                     String telefono = datos[2];
                     String correo = datos[3];
@@ -56,32 +65,30 @@ public class GestorDatosCliente {
 
                     String rutTexto = datos[7];
 
-                    Direccion direccion =
-                            new Direccion(
-                                    calle,
-                                    ciudad,
-                                    region
-                            );
+                    Direccion direccion = new Direccion(
+                            calle,
+                            ciudad,
+                            region
+                    );
 
-                    Rut rut =
-                            new Rut(rutTexto);
+                    Rut rut = new Rut(rutTexto);
 
-                    Cliente cliente =
-                            new Cliente(
-                                    nombre,
-                                    telefono,
-                                    correo,
-                                    direccion,
-                                    rut,
-                                    idCliente
-                            );
+                    Cliente cliente = new Cliente(
+                            nombre,
+                            telefono,
+                            correo,
+                            direccion,
+                            rut,
+                            idCliente
+                    );
 
                     listaClientes.add(cliente);
                 }
             }
 
-        } catch (IOException |
-                 NumberFormatException e) {
+            this.clientes = listaClientes;
+
+        } catch (IOException | NumberFormatException e) {
 
             System.out.println(
                     "Error al leer archivo: "
@@ -89,5 +96,34 @@ public class GestorDatosCliente {
         }
 
         return listaClientes;
+    }
+
+    /**
+     * Busca un cliente utilizando
+     * su identificador.
+     *
+     * Si la colección de clientes se
+     * encuentra vacía, primero se
+     * cargan los datos desde el archivo.
+     *
+     * @param idCliente identificador
+     * del cliente a buscar
+     * @return objeto Cliente encontrado
+     * o null si no existe
+     */
+    public Cliente buscarPorId(int idCliente) {
+
+        if (clientes.isEmpty()) {
+            cargarClientes();
+        }
+
+        for (Cliente cliente : clientes) {
+
+            if (cliente.getIdCliente() == idCliente) {
+                return cliente;
+            }
+        }
+
+        return null;
     }
 }

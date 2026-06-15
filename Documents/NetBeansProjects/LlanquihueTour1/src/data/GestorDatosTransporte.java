@@ -15,10 +15,21 @@ import java.util.ArrayList;
  * Clase encargada de cargar los transportes
  * almacenados en el archivo transportes.txt.
  *
+ * Permite leer los registros del archivo,
+ * crear objetos de tipo Transporte y
+ * almacenarlos en una colección ArrayList.
+ *
  * @author ADMIN
  */
 public class GestorDatosTransporte {
 
+    /**
+     * Carga todos los transportes desde
+     * el archivo transportes.txt.
+     *
+     * @return lista de transportes cargados
+     * desde el archivo
+     */
     public ArrayList<Transporte> cargarTransportes() {
 
         ArrayList<Transporte> listaTransportes =
@@ -69,10 +80,13 @@ public class GestorDatosTransporte {
     }
 
     /**
-     * Busca un transporte por su ID.
+     * Busca un transporte utilizando
+     * su identificador.
      *
-     * @param idTransporte ID a buscar
-     * @return transporte encontrado o null
+     * @param idTransporte identificador
+     * del transporte a buscar
+     * @return objeto Transporte encontrado
+     * o null si no existe
      */
     public Transporte buscarPorId(
             int idTransporte) {

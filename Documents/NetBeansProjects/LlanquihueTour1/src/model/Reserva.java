@@ -4,60 +4,195 @@
  */
 package model;
 
+import java.time.LocalDate;
+
 /**
+ * Representa una reserva realizada por un cliente
+ * para participar en un tour turístico.
+ *
+ * Una reserva relaciona a un cliente con un tour
+ * específico y registra la fecha en que se efectuó
+ * la reserva.
+ *
+ * Esta relación corresponde a una asociación entre
+ * las clases Cliente y Tour.
  *
  * @author ADMIN
  */
 public class Reserva {
 
+    /**
+     * Identificador único de la reserva.
+     */
     private int idReserva;
-    private Cliente cliente;
-    private Tour tour;
-    private String fechaReserva;
 
-    public Reserva(int idReserva, Cliente cliente, Tour tour, String fechaReserva) {
-        this.idReserva = idReserva;
-        this.cliente = cliente;
-        this.tour = tour;
-        this.fechaReserva = fechaReserva;
+    /**
+     * Cliente que realiza la reserva.
+     */
+    private Cliente cliente;
+
+    /**
+     * Tour asociado a la reserva.
+     */
+    private Tour tour;
+
+    /**
+     * Fecha en que se realizó la reserva.
+     */
+    private LocalDate fechaReserva;
+
+    /**
+     * Constructor de la clase Reserva.
+     *
+     * @param idReserva identificador único
+     * de la reserva
+     * @param cliente cliente asociado
+     * a la reserva
+     * @param tour tour asociado
+     * a la reserva
+     * @param fechaReserva fecha en que se
+     * realizó la reserva
+     */
+    public Reserva(
+            int idReserva,
+            Cliente cliente,
+            Tour tour,
+            LocalDate fechaReserva) {
+
+        setIdReserva(idReserva);
+        setCliente(cliente);
+        setTour(tour);
+        setFechaReserva(fechaReserva);
+
     }
 
+    /**
+     * Obtiene el identificador de la reserva.
+     *
+     * @return identificador de la reserva
+     */
     public int getIdReserva() {
         return idReserva;
     }
 
+    /**
+     * Modifica el identificador de la reserva.
+     *
+     * @param idReserva nuevo identificador
+     * de la reserva
+     * @throws IllegalArgumentException si el
+     * identificador es menor o igual a cero
+     */
     public void setIdReserva(int idReserva) {
+
+        if (idReserva <= 0) {
+
+            throw new IllegalArgumentException(
+                    "El identificador de la reserva debe ser mayor que cero.");
+
+        }
+
         this.idReserva = idReserva;
     }
 
+    /**
+     * Obtiene el cliente asociado a la reserva.
+     *
+     * @return cliente de la reserva
+     */
     public Cliente getCliente() {
         return cliente;
     }
 
+    /**
+     * Modifica el cliente asociado a la reserva.
+     *
+     * @param cliente nuevo cliente
+     * @throws IllegalArgumentException si el
+     * cliente es nulo
+     */
     public void setCliente(Cliente cliente) {
+
+        if (cliente == null) {
+
+            throw new IllegalArgumentException(
+                    "El cliente no puede estar vacío.");
+
+        }
+
         this.cliente = cliente;
     }
 
+    /**
+     * Obtiene el tour asociado a la reserva.
+     *
+     * @return tour de la reserva
+     */
     public Tour getTour() {
         return tour;
     }
 
+    /**
+     * Modifica el tour asociado a la reserva.
+     *
+     * @param tour nuevo tour
+     * @throws IllegalArgumentException si el
+     * tour es nulo
+     */
     public void setTour(Tour tour) {
+
+        if (tour == null) {
+
+            throw new IllegalArgumentException(
+                    "El Tour no puede estar vacío.");
+
+        }
+
         this.tour = tour;
     }
 
-    public String getFechaReserva() {
+    /**
+     * Obtiene la fecha de la reserva.
+     *
+     * @return fecha de la reserva
+     */
+    public LocalDate getFechaReserva() {
         return fechaReserva;
     }
 
-    public void setFechaReserva(String fechaReserva) {
+    /**
+     * Modifica la fecha de la reserva.
+     *
+     * @param fechaReserva nueva fecha
+     * de la reserva
+     * @throws IllegalArgumentException si la
+     * fecha es nula
+     */
+    public void setFechaReserva(LocalDate fechaReserva) {
+
+        if (fechaReserva == null) {
+
+            throw new IllegalArgumentException(
+                    "La fecha de reserva no puede estar vacía.");
+
+        }
+
         this.fechaReserva = fechaReserva;
     }
 
+    /**
+     * Retorna la información completa
+     * de la reserva.
+     *
+     * @return datos de la reserva
+     */
     @Override
     public String toString() {
-        return "Reserva{" + "idReserva=" + idReserva + ", cliente=" + cliente + ", tour=" + tour + ", fechaReserva=" + fechaReserva + '}';
+
+        return "Reserva N°: " + idReserva
+                + "\nCliente: " + cliente.getNombre()
+                + "\nTour: " + tour.getNombre()
+                + "\nFecha Reserva: " + fechaReserva;
     }
-    
-    
+
 }

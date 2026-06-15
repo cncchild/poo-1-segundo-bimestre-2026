@@ -3,13 +3,37 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package model;
+
 /**
+ * Representa a un conductor dentro del sistema.
+ *
+ * Conductor hereda de Persona, por lo que obtiene
+ * todos los atributos y comportamientos asociados
+ * a una persona registrada.
+ *
+ * Esta relación corresponde a una herencia (IS-A),
+ * ya que un Conductor es una Persona.
  *
  * @author ADMIN
  */
-public class Conductor extends Persona{
-     private int idConductor;
+public class Conductor extends Persona {
 
+    /**
+     * Identificador único del conductor.
+     */
+    private int idConductor;
+
+    /**
+     * Constructor de la clase Conductor.
+     *
+     * @param nombre nombre del conductor
+     * @param telefono teléfono del conductor
+     * @param correo correo electrónico
+     * @param direccion dirección asociada
+     * @param rut rut asociado
+     * @param idConductor identificador único
+     * del conductor
+     */
     public Conductor(
             String nombre,
             String telefono,
@@ -25,11 +49,27 @@ public class Conductor extends Persona{
                 direccion,
                 rut
         );
+
         setIdConductor(idConductor);
     }
+
+    /**
+     * Obtiene el identificador del conductor.
+     *
+     * @return identificador del conductor
+     */
     public int getIdConductor() {
         return idConductor;
     }
+
+    /**
+     * Modifica el identificador del conductor.
+     *
+     * @param idConductor nuevo identificador
+     * del conductor
+     * @throws IllegalArgumentException si el
+     * identificador es menor o igual a cero
+     */
     public void setIdConductor(int idConductor) {
 
         if (idConductor <= 0) {
@@ -39,6 +79,13 @@ public class Conductor extends Persona{
 
         this.idConductor = idConductor;
     }
+
+    /**
+     * Retorna la información completa
+     * del conductor.
+     *
+     * @return datos del conductor
+     */
     @Override
     public String toString() {
 

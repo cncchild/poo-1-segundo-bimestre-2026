@@ -7,15 +7,33 @@ package data;
 import model.Direccion;
 import model.Guia;
 import model.Rut;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * Clase encargada de cargar los guías
+ * almacenados en el archivo guias.txt.
+ *
+ * Permite leer los registros del archivo,
+ * crear objetos de tipo Guia y
+ * almacenarlos en una colección ArrayList.
+ *
+ * @author ADMIN
+ */
 public class GestorDatosGuia {
 
+    /**
+     * Carga todos los guías desde
+     * el archivo guias.txt.
+     *
+     * @return lista de guías cargados
+     * desde el archivo
+     */
     public ArrayList<Guia> cargarGuias() {
-        
+
         ArrayList<Guia> listaGuias = new ArrayList<>();
 
         try (BufferedReader lector =
@@ -77,17 +95,28 @@ public class GestorDatosGuia {
 
         return listaGuias;
     }
+
+    /**
+     * Busca un guía utilizando
+     * su identificador.
+     *
+     * @param idGuia identificador
+     * del guía a buscar
+     * @return objeto Guia encontrado
+     * o null si no existe
+     */
     public Guia buscarPorId(int idGuia) {
-    ArrayList<Guia> lista = cargarGuias();
 
-    for (Guia guia : lista) {
-        if (guia.getIdGuia() == idGuia) {
-            return guia;
+        ArrayList<Guia> lista =
+                cargarGuias();
+
+        for (Guia guia : lista) {
+
+            if (guia.getIdGuia() == idGuia) {
+                return guia;
+            }
         }
+
+        return null;
     }
-
-    return null;
-
-}
-    
 }
