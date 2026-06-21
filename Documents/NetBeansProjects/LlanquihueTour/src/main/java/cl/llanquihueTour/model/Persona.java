@@ -40,16 +40,16 @@ public class Persona{
      * Composicion rut
      */
     private Rut rut;
-/**
- * Constructor de la clase Persona.
- *
- * @param nombre nombre de la persona
- * @param telefono teléfono de contacto
- * @param correo correo electrónico
- * @param direccion dirección de la persona
- * @param rut rut de la persona
- * @throws IllegalArgumentException si algún dato es inválido
- */
+    /**
+     * Constructor de la clase Persona.
+     *
+     * @param nombre nombre de la persona
+     * @param telefono teléfono de contacto
+     * @param correo correo electrónico
+     * @param direccion dirección de la persona
+     * @param rut rut de la persona
+     * @throws IllegalArgumentException si algún dato es inválido
+     */
     public Persona(String nombre,
             String telefono, String correo, Direccion direccion, Rut rut) {
 

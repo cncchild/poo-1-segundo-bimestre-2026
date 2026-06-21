@@ -139,8 +139,8 @@ public final class Direccion {
 
         if (!Validator.noEsVacio(region)){
 
-                throw new IllegalArgumentException(
-                        "La region no puede estar vacío.");
+            throw new IllegalArgumentException(
+                    "La region no puede estar vacío.");
 
             }else if (!Validator.soloLetras(region)){
 
@@ -152,7 +152,7 @@ public final class Direccion {
                 throw new IllegalArgumentException(
                         "La region debe tener al menos 3 caracteres.");
 
-            }
+        }
 
         this.region = region.trim();
     }

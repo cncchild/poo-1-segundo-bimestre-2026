@@ -57,3 +57,24 @@ Clases auxiliares del sistema:
 2. Asegurarse de que los archivos `.txt` estén en la ruta correcta definida en `Constants`.
 3. Ejecutar la clase principal:
 
+4. El sistema mostrará en consola:
+- Guías turísticos
+- Clientes
+- Transportes
+- Tours
+- Reservas
+- Filtros aplicados (ofertas y destacados)
+
+---
+
+## ⚙️ Requisitos
+
+- Java 17 o superior
+- IDE (NetBeans / IntelliJ IDEA)
+- Archivos de datos `.txt` correctamente configurados
+
+---
+
+## 👨‍💻 Autor
+
+Proyecto desarrollado como actividad académica de programación orientada a objetos en Java.

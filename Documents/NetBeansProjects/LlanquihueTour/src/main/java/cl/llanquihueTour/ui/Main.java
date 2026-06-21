@@ -55,10 +55,10 @@ public class Main {
      */
     public static void main(String[] args) {
         System.setOut(new java.io.PrintStream(System.out, true, java.nio.charset.StandardCharsets.UTF_8));
-           System.out.println("----------------");
-        System.out.println("===LLANQUIHUE TOUR APP  ===");
-System.out.println("===Bienvenido a nuestra guia virtual ===");
-   System.out.println("----------------");
+        System.out.println("----------------");
+        System.out.println("=== SISTEMA LLANQUIHUE TOUR ===");
+        System.out.println("=== Bienvenido a nuestra agencia turística ===");
+        System.out.println("----------------");
         // Ver todos los guías
         GestorDatosGuia gestorGuia =
                 new GestorDatosGuia();
@@ -66,31 +66,29 @@ System.out.println("===Bienvenido a nuestra guia virtual ===");
         ArrayList<Guia> listaGuias =
                 gestorGuia.cargarGuias();
 
-System.out.println("===NUESTROS SON GUÍAS  ===");
-System.out.println("===Somos un equipo certificado  ===");
+        System.out.println("=== NUESTROS GUÍAS TURÍSTICOS ===");
+        System.out.println("=== Somos un equipo certificado ===");
 
 
-for (Guia guia : listaGuias) {
+        for (Guia guia : listaGuias) {
 
-    System.out.println("Nombre: " + guia.getNombre());
-    System.out.println("Número identificador: " + guia.getIdGuia());
-    System.out.println("----------------");
+            System.out.println("Nombre: " + guia.getNombre());
+            System.out.println("Número identificador: " + guia.getIdGuia());
+            System.out.println("----------------");
 
 
-}System.out.println("=== GUÍA DESTACADA ===");
+        }System.out.println("=== GUÍA DESTACADA ===");
 
-for (Guia guia : listaGuias) {
+        for (Guia guia : listaGuias) {
 
-    if (guia.getIdGuia() == 3) {
+            if (guia.getIdGuia() == 3) {
 
-        System.out.println("Nombre: " + guia.getNombre());
-        System.out.println("Teléfono: " + guia.getTelefono());
-        System.out.println("Correo: " + guia.getCorreo());
-        System.out.println("----------------");
-    }
-}
-
- 
+                System.out.println("Nombre: " + guia.getNombre());
+                System.out.println("Teléfono: " + guia.getTelefono());
+                System.out.println("Correo: " + guia.getCorreo());
+                System.out.println("----------------");
+            }
+        }
 
         // Ver todos los clientes
         GestorDatosCliente gestorCliente =
@@ -104,9 +102,9 @@ for (Guia guia : listaGuias) {
 
         for (Cliente cliente : listaClientes) {
 
-         System.out.println("Nombre: " + cliente.getNombre());
-    System.out.println("Correo Electronico: " + cliente.getCorreo());
-    System.out.println("----------------");
+            System.out.println("Nombre: " + cliente.getNombre());
+            System.out.println("Correo Electronico: " + cliente.getCorreo());
+            System.out.println("----------------");
         }
 
         // Ver todos los transportes
@@ -120,8 +118,8 @@ for (Guia guia : listaGuias) {
 
         for (Transporte transporte : listaTransportes) {
 
-                     System.out.println("Nombre: " + transporte.getTipoVehiculo());
-    System.out.println("Capacidad: " + transporte.getCapacidad());
+            System.out.println("Nombre: " + transporte.getTipoVehiculo());
+            System.out.println("Capacidad: " + transporte.getCapacidad());
             System.out.println("----------------");
         }
 
@@ -140,24 +138,24 @@ for (Guia guia : listaGuias) {
             System.out.println("----------------");
         }
 
-System.out.println("=== TOURS EN OFERTA (30.000 - 50.000) ===");
+            System.out.println("=== TOURS EN OFERTA (30.000 - 50.000) ===");
 
-int contador = 0;
+        int contador = 0;
 
-for (Tour tour : listaTours) {
+        for (Tour tour : listaTours) {
 
-    if (tour.getPrecio() >= 30000 && tour.getPrecio() <= 50000) {
+            if (tour.getPrecio() >= 30000 && tour.getPrecio() <= 50000) {
 
-        System.out.println("🔥 OFERTA:");
-        System.out.println("Nombre: " + tour.getNombre());
-        System.out.println("Precio: $" + tour.getPrecio());
-        System.out.println("----------------");
+                System.out.println("🔥 OFERTA:");
+                System.out.println("Nombre: " + tour.getNombre());
+                System.out.println("Precio: $" + tour.getPrecio());
+                System.out.println("----------------");
 
-        contador++;
-    }
-}
+                contador++;
+            }
+        }
 
-System.out.println("Total de tours en oferta: " + contador);
+        System.out.println("Total de tours en oferta: " + contador);
         System.out.println("================================");
 
         // Ver todas las reservas
@@ -171,11 +169,11 @@ System.out.println("Total de tours en oferta: " + contador);
 
         for (Reserva reserva : listaReservas) {
 
-           System.out.println("ID Reserva: " + reserva.getIdReserva());
-    System.out.println("Cliente: " + reserva.getCliente().getNombre());
-    System.out.println("Tour: " + reserva.getTour().getNombre());
-    System.out.println("Fecha: " + reserva.getFechaReserva());
-    System.out.println("----------------");
+            System.out.println("ID Reserva: " + reserva.getIdReserva());
+            System.out.println("Cliente: " + reserva.getCliente().getNombre());
+            System.out.println("Tour: " + reserva.getTour().getNombre());
+            System.out.println("Fecha: " + reserva.getFechaReserva());
+            System.out.println("----------------");
         }
     }
 }
