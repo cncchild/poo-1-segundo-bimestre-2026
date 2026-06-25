@@ -44,7 +44,7 @@ public class GestorDatosCliente {
 
         try (BufferedReader lector =
                      new BufferedReader(
-                             new FileReader("Resources/clientes.txt"))) {
+                             new FileReader("resources/clientes.txt"))) {
 
             String linea;
 

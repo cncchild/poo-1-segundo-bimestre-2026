@@ -38,7 +38,7 @@ public class GestorDatosGuia {
 
         try (BufferedReader lector =
                 new BufferedReader(
-                        new FileReader("Resources/guias.txt"))) {
+                        new FileReader("resources/guias.txt"))) {
 
             String linea;
 

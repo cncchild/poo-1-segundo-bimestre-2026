@@ -38,7 +38,7 @@ public class GestorDatosTransporte {
         try (BufferedReader lector =
                 new BufferedReader(
                         new FileReader(
-                                "Resources/transportes.txt"))) {
+                                "resources/transportes.txt"))) {
 
             String linea;
 

@@ -51,7 +51,7 @@ public class GestorDatosTour {
         ArrayList<Tour> listaTours = new ArrayList<>();
 
         try (BufferedReader lector = new BufferedReader(
-                new FileReader("Resources/tours.txt"))) {
+                new FileReader("resources/tours.txt"))) {
 
             String linea;
 

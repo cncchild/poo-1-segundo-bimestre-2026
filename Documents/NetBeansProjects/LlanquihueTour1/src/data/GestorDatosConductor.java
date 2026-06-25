@@ -40,7 +40,7 @@ public class GestorDatosConductor {
         try (BufferedReader lector =
                 new BufferedReader(
                         new FileReader(
-                                "Resources/conductor.txt"))) {
+                                "resources/conductor.txt"))) {
 
             String linea;
 

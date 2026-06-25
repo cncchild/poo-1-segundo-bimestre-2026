@@ -46,7 +46,7 @@ public class GestorDatosReserva {
         ArrayList<Reserva> listaReservas = new ArrayList<>();
 
         try (BufferedReader lector = new BufferedReader(
-                new FileReader("Resources/reservas.txt"))) {
+                new FileReader("resources/reservas.txt"))) {
 
             String linea;
 

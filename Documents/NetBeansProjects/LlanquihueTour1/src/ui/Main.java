@@ -53,7 +53,7 @@ public class Main {
      * @param args argumentos de línea de comandos
      */
     public static void main(String[] args) {
-
+ System.setOut(new java.io.PrintStream(System.out, true, java.nio.charset.StandardCharsets.UTF_8));
         // Ver todos los guías
         GestorDatosGuia gestorGuia =
                 new GestorDatosGuia();
