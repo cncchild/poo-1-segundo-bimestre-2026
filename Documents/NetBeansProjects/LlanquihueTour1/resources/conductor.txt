@@ -1,0 +1,5 @@
+1;Gonzalo Fuentes;987111111;gonzalo@conduciendo.cl;Los Pinos;Santiago;Region Metropolitana;12345678-5
+2;Mabel Rojas;987222222;mabel@conduciendo.cl;Las Flores;Maipu;Region Metropolitana;11111111-5
+3;Catalina Herrera;987333333;catalina@conduciendo.cl;San Martin;Providencia;Region Metropolitana;22222222-5
+4;Javiera Soto;987444444;javiera@conduciendo.cl;Brasil;Nunoa;Region Metropolitana;33333333-5
+5;Rosa Díaz;987555555;rosa@conduciendo.cl;O'Higgins;La Florida;Region Metropolitana;44444444-5
