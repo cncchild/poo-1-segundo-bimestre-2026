@@ -17,10 +17,10 @@ package cl.llanquihueTourS6.model;
 public class ServicioTuristico {
 
     /** Nombre del servicio turístico. */
-    protected String nombre;
+    private String nombre;
 
     /** Duración del servicio expresada en horas. */
-    protected int duracionHoras;
+    private int duracionHoras;
 
     /**
      * Constructor de la clase ServicioTuristico.

@@ -6,11 +6,9 @@ package cl.llanquihueTourS6.model;
 
 /**
  * Representa una excursión cultural ofrecida por la agencia Llanquihue Tour.
- * <p>
  * Esta clase hereda de {@code ServicioTuristico} e incorpora el atributo
  * específico lugar histórico, que indica el destino patrimonial o cultural
  * visitado durante la excursión.
- * </p>
  *
  * @author ADMIN
  */

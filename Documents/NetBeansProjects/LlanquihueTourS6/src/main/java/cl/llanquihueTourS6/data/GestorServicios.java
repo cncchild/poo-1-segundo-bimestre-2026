@@ -7,42 +7,30 @@ package cl.llanquihueTourS6.data;
 import cl.llanquihueTourS6.model.ExcursionCultural;
 import cl.llanquihueTourS6.model.PaseoLacustre;
 import cl.llanquihueTourS6.model.RutaGastronomica;
-
 /**
  * Clase encargada de gestionar y crear instancias de servicios turísticos.
- * <p>
  * En esta clase se generan objetos de prueba de las distintas subclases
- * de {@code ServicioTuristico} para validar la jerarquía de herencia
+ * de {ServicioTuristico} para validar la jerarquía de herencia
  * implementada en el sistema.
- * </p>
- *
- * @author ADMIN
  */
 public class GestorServicios {
-
     /**
      * Crea y muestra en consola distintos servicios turísticos
      * utilizando las clases de la jerarquía de herencia.
      */
     public void mostrarServicios() {
 
-        RutaGastronomica ruta1 =
-                new RutaGastronomica("Ruta Cervecera", 4, 5);
+        RutaGastronomica ruta1 = new RutaGastronomica("Ruta Cervecera", 4, 5);
 
-        RutaGastronomica ruta2 =
-                new RutaGastronomica("Ruta Sabores del Sur", 3, 4);
+        RutaGastronomica ruta2 = new RutaGastronomica("Ruta Sabores del Sur", 3, 4);
 
-        PaseoLacustre paseo1 =
-                new PaseoLacustre("Lago Llanquihue", 2, "Catamarán");
+        PaseoLacustre paseo1 = new PaseoLacustre("Lago Llanquihue", 2, "Catamarán");
 
-        PaseoLacustre paseo2 =
-                new PaseoLacustre("Navegación Frutillar", 3, "Lancha");
+        PaseoLacustre paseo2 = new PaseoLacustre("Navegación Frutillar", 3, "Lancha");
 
-        ExcursionCultural excursion1 =
-                new ExcursionCultural("Museo Colonial", 2, "Puerto Varas");
+        ExcursionCultural excursion1 = new ExcursionCultural("Museo Colonial", 2, "Puerto Varas");
 
-        ExcursionCultural excursion2 =
-                new ExcursionCultural("Iglesias Patrimoniales", 5, "Chiloé");
+        ExcursionCultural excursion2 = new ExcursionCultural("Iglesias Patrimoniales", 5, "Chiloé");
 
         System.out.println(ruta1);
         System.out.println();

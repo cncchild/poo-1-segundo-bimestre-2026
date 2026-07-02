@@ -7,11 +7,9 @@ import cl.llanquihueTourS6.data.GestorServicios;
 
 /**
  * Clase principal del sistema Llanquihue Tour.
- * <p>
  * Esta clase inicia la ejecución de la aplicación creando una instancia
  * de GestorServicios para generar y mostrar los servicios turísticos
  * implementados mediante herencia simple.
- * </p>
  *
  * @author ADMIN
  */

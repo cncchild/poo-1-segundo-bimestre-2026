@@ -6,11 +6,9 @@ package cl.llanquihueTourS6.model;
 
 /**
  * Representa una ruta gastronómica ofrecida por la agencia Llanquihue Tour.
- * <p>
  * Esta clase hereda de {@code ServicioTuristico} e incorpora el atributo
  * específico número de paradas, que indica la cantidad de lugares que se
  * visitarán durante el recorrido.
- * </p>
  *
  * @author ADMIN
  */

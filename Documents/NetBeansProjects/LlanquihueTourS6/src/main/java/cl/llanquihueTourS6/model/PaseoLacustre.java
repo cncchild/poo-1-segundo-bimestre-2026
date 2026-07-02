@@ -6,11 +6,11 @@ package cl.llanquihueTourS6.model;
 
 /**
  * Representa un paseo lacustre ofrecido por la agencia Llanquihue Tour.
- * <p>
+ * 
  * Esta clase hereda de {@code ServicioTuristico} e incorpora el atributo
  * específico tipo de embarcación, que indica el medio de transporte
  * utilizado durante el recorrido por el lago.
- * </p>
+ * 
  *
  * @author ADMIN
  */
