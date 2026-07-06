@@ -1,11 +1,14 @@
-Semana 1 - Programación Orientada a Objetos
 
-Objetivo
+
+# Semana 1 - Programación Orientada a Objetos
+
+## Objetivo
 
 Desarrollar una clase en Java aplicando los fundamentos de la Programación Orientada a Objetos, utilizando atributos privados, constructores, métodos de acceso (getters y setters), validación de datos y el método `toString()` para representar la información de un estudiante.
-Clase desarrollada
 
-EstudianteInstitucional
+## Clase desarrollada
+
+### EstudianteInstitucional
 
 Representa a un estudiante de una institución educativa e incluye los siguientes atributos:
 
@@ -24,17 +27,17 @@ La clase implementa:
 - Validación de datos en los setters.
 - Sobrescritura del método `toString()` para mostrar la información del estudiante.
 
-Tecnologías utilizadas
+## Tecnologías utilizadas
 
 - Java
 - NetBeans IDE
 
-Ejecución del proyecto
+## Ejecución del proyecto
 
 1. Abrir el proyecto en NetBeans.
 2. Ejecutar la clase que contiene el método `main()`.
 3. Observar la creación del objeto `EstudianteInstitucional` y la salida generada en la consola.
 
-Autor
+## Autor
 
 Cristian Contreras
