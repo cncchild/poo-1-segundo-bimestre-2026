@@ -1,0 +1,24 @@
+# NetBeans (todos los proyectos)
+**/nbproject/private/
+**/build/
+**/dist/
+**/nbbuild/
+**/.nb-gradle/
+
+# Maven
+**/target/
+*.jar
+*.war
+*.ear
+
+# Archivos compilados Java
+*.class
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Archivos temporales
+*.log
+.DS_Store

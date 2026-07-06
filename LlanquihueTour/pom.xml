@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>cl.llanquihueTour</groupId>
+    <artifactId>LlanquihueTour</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.release>25</maven.compiler.release>
+        <exec.mainClass>cl.llanquihueTour.ui.Main</exec.mainClass>
+     </properties>
+      <dependencies>
+
+        <!-- Librería para trabajar con Excel -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>5.4.1</version>
+        </dependency>
+
+    </dependencies>
+    <build>
+        <plugins>
+            <!--pling que compila el proyecto en java-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
+                <configuration>
+                    <release>23</release>
+                </configuration>
+            </plugin>
+            <!--pling que crea el archivo ejecuta .jar-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.4.2</version>
+
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>
+                                cl.llanquihueTour.ui.Main
+                            </mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+
+            </plugin>
+
+        </plugins>
+    </build>
+</project>
