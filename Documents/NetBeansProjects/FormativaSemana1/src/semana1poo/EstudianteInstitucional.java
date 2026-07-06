@@ -7,7 +7,7 @@
  */
 package semana1poo;
 
-public class EstudianteInstitucional {
+public final class EstudianteInstitucional {
 
     // ATRIBUTOS PRIVADOS
 
