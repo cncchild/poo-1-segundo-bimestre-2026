@@ -6,7 +6,6 @@ package cl.llanquihueTourS7.model;
 
 /**
  * Representa una ruta gastronómica ofrecida por la agencia Llanquihue Tour.
- *
  * Esta clase hereda de {@code ServicioTuristico} e incorpora el atributo
  * específico número de paradas, que indica la cantidad de lugares que se
  * visitarán durante el recorrido.
@@ -20,7 +19,6 @@ public class RutaGastronomica extends ServicioTuristico {
 
     /**
      * Constructor de la clase RutaGastronomica.
-     *
      * @param nombre nombre de la ruta gastronómica.
      * @param duracionHoras duración de la ruta en horas.
      * @param numeroDeParadas cantidad de paradas que contempla la ruta.
@@ -46,7 +44,6 @@ public class RutaGastronomica extends ServicioTuristico {
     /**
      * Devuelve una representación en texto de la ruta gastronómica,
      * incluyendo la información heredada y el número de paradas.
-     *
      * @return información completa de la ruta gastronómica.
      */
     @Override
@@ -56,5 +53,4 @@ public class RutaGastronomica extends ServicioTuristico {
                 + "\nNúmero de paradas: " + numeroDeParadas;
 
     }
-
 }

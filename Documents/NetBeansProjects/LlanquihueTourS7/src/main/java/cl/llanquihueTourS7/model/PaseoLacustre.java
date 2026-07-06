@@ -10,9 +10,6 @@ package cl.llanquihueTourS7.model;
  * Esta clase hereda de {@code ServicioTuristico} e incorpora el atributo
  * específico tipo de embarcación, que indica el medio de transporte
  * utilizado durante el recorrido por el lago.
- * 
- *
- * @author ADMIN
  */
 public class PaseoLacustre extends ServicioTuristico {
 
@@ -21,7 +18,6 @@ public class PaseoLacustre extends ServicioTuristico {
 
     /**
      * Constructor de la clase PaseoLacustre.
-     *
      * @param nombre nombre del paseo lacustre.
      * @param duracionHoras duración del paseo en horas.
      * @param tipoEmbarcacion tipo de embarcación utilizada.
@@ -36,7 +32,6 @@ public class PaseoLacustre extends ServicioTuristico {
     
     /**
      * Muestra la información del paseo lacustre.
-     *
      * Sobrescribe el método de la superclase para presentar la información
      * específica de este tipo de servicio turístico.
      */
@@ -44,13 +39,11 @@ public class PaseoLacustre extends ServicioTuristico {
     public void mostrarInformacion() {
 
         System.out.println(toString());
-
     }
 
     /**
      * Devuelve una representación en texto del paseo lacustre,
      * incluyendo la información heredada y el tipo de embarcación.
-     *
      * @return información completa del paseo lacustre.
      */
     @Override

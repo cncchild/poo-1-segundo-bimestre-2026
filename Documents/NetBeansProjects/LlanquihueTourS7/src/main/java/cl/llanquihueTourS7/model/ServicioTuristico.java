@@ -7,13 +7,9 @@ package cl.llanquihueTourS7.model;
 /**
  * Representa un servicio turístico genérico de la agencia Llanquihue Tour.
  *
- * <p>
  * Esta es la superclase de los distintos tipos de servicios turísticos.
  * Contiene los atributos comunes que heredarán las subclases, como el
  * nombre del servicio y su duración en horas.
- * </p>
- *
- * @author ADMIN
  */
 public class ServicioTuristico {
 
@@ -25,7 +21,6 @@ public class ServicioTuristico {
 
     /**
      * Constructor de la clase ServicioTuristico.
-     *
      * @param nombre nombre del servicio turístico.
      * @param duracionHoras duración del servicio en horas.
      */
@@ -45,7 +40,6 @@ public class ServicioTuristico {
 
     /**
      * Devuelve una representación en texto del servicio turístico.
-     *
      * @return información del servicio, incluyendo nombre y duración.
      */
     @Override
@@ -53,5 +47,4 @@ public class ServicioTuristico {
         return "Nombre: " + nombre
                 + "\nDuración: " + duracionHoras + " horas";
     }
-
 }

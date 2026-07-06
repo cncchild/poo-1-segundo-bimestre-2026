@@ -14,7 +14,6 @@ import cl.llanquihueTourS7.model.ServicioTuristico;
 
 /**
  * Clase encargada de gestionar los servicios turísticos de la agencia.
- *
  * En esta clase se crea una colección de servicios turísticos utilizando
  * polimorfismo, almacenando objetos de distintas subclases en una misma lista.
  *
@@ -55,9 +54,6 @@ public class GestorServicios {
             servicio.mostrarInformacion();
 
             System.out.println("------------------------------");
-
         }
-
     }
-
 }
