@@ -26,7 +26,7 @@ public class Main {
      * @param args argumentos de la línea de comandos (no utilizados).
      */
     public static void main(String[] args) {
-
+        System.setOut(new java.io.PrintStream(System.out, true, java.nio.charset.StandardCharsets.UTF_8));
         GestorServicios gestor = new GestorServicios();
 
         gestor.mostrarServicios();
