@@ -52,11 +52,17 @@ Organización del repositorio
 poo-1-segundo-bimestre-2026
 │
 ├── FormativaSemana1
+
 ├── Sumativa1S3
+
 ├── LlanquihueTour1
+
 ├── LlanquihueTour
+
 |__ LlanquihueTourS6
+
 |__ LlanquihueTourS7
+
 └── LlanquihueTourApp
 
 Cada proyecto contiene su propio archivo README.md con la documentación específica de la actividad correspondiente.
