@@ -11,7 +11,7 @@ package cl.llanquihueTourS7.model;
  * específico tipo de embarcación, que indica el medio de transporte
  * utilizado durante el recorrido por el lago.
  */
-public class PaseoLacustre extends ServicioTuristico {
+public class PaseoLacustre extends ServicioTuristico implements Registrable {
 
     /** Tipo de embarcación utilizada en el paseo lacustre. */
     private String tipoEmbarcacion;

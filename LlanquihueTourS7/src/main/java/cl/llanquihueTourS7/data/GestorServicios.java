@@ -10,7 +10,8 @@ import java.util.List;
 import cl.llanquihueTourS7.model.ExcursionCultural;
 import cl.llanquihueTourS7.model.PaseoLacustre;
 import cl.llanquihueTourS7.model.RutaGastronomica;
-import cl.llanquihueTourS7.model.ServicioTuristico;
+import cl.llanquihueTourS7.model.Registrable;
+
 
 /**
  * Clase encargada de gestionar los servicios turísticos de la agencia.
@@ -22,7 +23,7 @@ import cl.llanquihueTourS7.model.ServicioTuristico;
 public class GestorServicios {
 
     /** Lista que almacena los servicios turísticos. */
-    private List<ServicioTuristico> servicios;
+    private List<Registrable> registros;
 
     /**
      * Constructor de la clase GestorServicios.
@@ -30,16 +31,16 @@ public class GestorServicios {
      */
     public GestorServicios() {
 
-        servicios = new ArrayList<>();
+        registros = new ArrayList<>();
 
-        servicios.add(new RutaGastronomica("Ruta Cervecera", 4, 5));
-        servicios.add(new RutaGastronomica("Ruta Sabores del Sur", 3, 4));
+        registros.add(new RutaGastronomica("Ruta Cervecera", 4, 5));
+        registros.add(new RutaGastronomica("Ruta Sabores del Sur", 3, 4));
 
-        servicios.add(new PaseoLacustre("Lago Llanquihue", 2, "Catamarán"));
-        servicios.add(new PaseoLacustre("Navegación Frutillar", 3, "Lancha"));
+        registros.add(new PaseoLacustre("Lago Llanquihue", 2, "Catamarán"));
+        registros.add(new PaseoLacustre("Navegación Frutillar", 3, "Lancha"));
 
-        servicios.add(new ExcursionCultural("Museo Colonial", 2, "Puerto Varas"));
-        servicios.add(new ExcursionCultural("Iglesias Patrimoniales", 5, "Chiloé"));
+        registros.add(new ExcursionCultural("Museo Colonial", 2, "Puerto Varas"));
+        registros.add(new ExcursionCultural("Iglesias Patrimoniales", 5, "Chiloé"));
 
     }
 
@@ -49,11 +50,29 @@ public class GestorServicios {
      */
     public void mostrarServicios() {
 
-        for (ServicioTuristico servicio : servicios) {
 
-            servicio.mostrarInformacion();
+   for (Registrable r : registros) {
 
-            System.out.println("------------------------------");
-        }
+    r.registrar();
+
+    if (r instanceof RutaGastronomica) {
+
+        System.out.println("Es una ruta gastronómica.");
+
+    }
+
+    if (r instanceof PaseoLacustre) {
+
+        System.out.println("Es un paseo lacustre.");
+
+    }
+
+    if (r instanceof ExcursionCultural) {
+
+        System.out.println("Es una excursión cultural.");
+
+    }
+
+}
     }
 }

@@ -11,7 +11,7 @@ package cl.llanquihueTourS7.model;
  * Contiene los atributos comunes que heredarán las subclases, como el
  * nombre del servicio y su duración en horas.
  */
-public class ServicioTuristico {
+public class ServicioTuristico implements Registrable {
 
     /** Nombre del servicio turístico. */
     private String nombre;
@@ -37,7 +37,13 @@ public class ServicioTuristico {
     public void mostrarInformacion() {
         System.out.println(toString());
     }
-
+    /**
+     * Registra el servicio turístico mostrando su información.
+     */
+    @Override
+    public void registrar() {
+        mostrarInformacion();
+    }
     /**
      * Devuelve una representación en texto del servicio turístico.
      * @return información del servicio, incluyendo nombre y duración.

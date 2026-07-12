@@ -12,7 +12,7 @@ package cl.llanquihueTourS7.model;
  *
  * @author ADMIN
  */
-public class RutaGastronomica extends ServicioTuristico {
+public class RutaGastronomica extends ServicioTuristico implements Registrable {
 
     /** Cantidad de paradas que realiza la ruta gastronómica. */
     private int numeroDeParadas;

@@ -9,7 +9,7 @@ package cl.llanquihueTourS7.model;
  * específico lugar histórico, que indica el destino patrimonial o cultural
  * visitado durante la excursión.
  */
-public class ExcursionCultural extends ServicioTuristico {
+public class ExcursionCultural extends ServicioTuristico implements Registrable{
 
     /** Lugar histórico o cultural que se visita en la excursión. */
     private String lugarHistorico;
