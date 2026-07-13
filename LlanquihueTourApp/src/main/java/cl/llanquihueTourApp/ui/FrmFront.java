@@ -187,23 +187,22 @@ public FrmFront() {
     }//GEN-LAST:event_RegistrarConductorActionPerformed
 
     private void RegistrarServicioTuristicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistrarServicioTuristicoActionPerformed
-          FrmServicioTuristico ventana =
-            new FrmServicioTuristico(gestor);
-
-    ventana.setLocationRelativeTo(null);
-    ventana.setVisible(true);
+        FrmServicioTuristico ventana =
+        new FrmServicioTuristico(gestor);
+        ventana.setLocationRelativeTo(null);
+        ventana.setVisible(true);
     }//GEN-LAST:event_RegistrarServicioTuristicoActionPerformed
 
     private void RegistrarGuiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistrarGuiaActionPerformed
         FrmGuia ventana = new FrmGuia(gestor);
-    ventana.setLocationRelativeTo(null);
-    ventana.setVisible(true);
+        ventana.setLocationRelativeTo(null);
+        ventana.setVisible(true);
     }//GEN-LAST:event_RegistrarGuiaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
            FrmCapitanNave ventana = new FrmCapitanNave(gestor);
-    ventana.setLocationRelativeTo(null);
-    ventana.setVisible(true);
+        ventana.setLocationRelativeTo(null);
+        ventana.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed

@@ -181,32 +181,32 @@ public final class Validator {
 
     }
     /**
- * Valida una licencia de conducir.
- *
- * @param licencia licencia a validar
- * @return true si la licencia es válida
- */
-public static boolean validarNumeroLicencia(String licencia) {
+    * Valida una licencia de conducir.
+    *
+    * @param licencia licencia a validar
+    * @return true si la licencia es válida
+    */
+   public static boolean validarNumeroLicencia(String licencia) {
 
-    return noEsVacio(licencia)
-            && longitudMinima(licencia, 3);
+       return noEsVacio(licencia)
+               && longitudMinima(licencia, 3);
 
-}
+   }
 
-/**
- * Valida la categoría de una licencia.
- *
- * Categorías permitidas:
- * A1, A2, A3, A4, A5, B, C, D, E y F.
- *
- * @param categoria categoría de licencia
- * @return true si la categoría es válida
- */
-public static boolean validarCategoriaLicencia(String categoria) {
+   /**
+    * Valida la categoría de una licencia.
+    *
+    * Categorías permitidas:
+    * A1, A2, A3, A4, A5, B, C, D, E y F.
+    *
+    * @param categoria categoría de licencia
+    * @return true si la categoría es válida
+    */
+   public static boolean validarCategoriaLicencia(String categoria) {
 
-    return noEsVacio(categoria)
-            && categoria.trim().toUpperCase()
-                    .matches("A[1-5]|B|C|D|E|F");
+       return noEsVacio(categoria)
+               && categoria.trim().toUpperCase()
+                       .matches("A[1-5]|B|C|D|E|F");
 
-}
+   }
 }

@@ -80,42 +80,42 @@ private String categoriaLicencia;
     public String getCategoriaLicencia(){
         return categoriaLicencia;
     }
- /**
- * Modifica la licencia del conductor.
- *
- * @param licencia nuevo licencia del conductor
- * @throws IllegalArgumentException si la licencia es inválida
- */
- public void setLicencia(String licencia) {
+    /**
+    * Modifica la licencia del conductor.
+    *
+    * @param licencia nuevo licencia del conductor
+    * @throws IllegalArgumentException si la licencia es inválida
+    */
+    public void setLicencia(String licencia) {
 
-    if (!Validator.validarNumeroLicencia(licencia)) {
+       if (!Validator.validarNumeroLicencia(licencia)) {
 
-        throw new IllegalArgumentException(
-                "La licencia es inválida.");
+           throw new IllegalArgumentException(
+                   "La licencia es inválida.");
 
-    }
+       }
 
-    this.licencia = licencia.trim();
-}
+       this.licencia = licencia.trim();
+   }
       
        /**
- * Modifica la categoriaLicencia del conductor.
- *
- * @param categoriaLicencia nuevo categoriaLicencia del conductor
- * @throws IllegalArgumentException si la licencia es inválida
- */
-public void setCategoriaLicencia(String categoriaLicencia) {
+    * Modifica la categoriaLicencia del conductor.
+    *
+    * @param categoriaLicencia nuevo categoriaLicencia del conductor
+    * @throws IllegalArgumentException si la licencia es inválida
+    */
+    public void setCategoriaLicencia(String categoriaLicencia) {
 
-    if (!Validator.validarCategoriaLicencia(categoriaLicencia)) {
+       if (!Validator.validarCategoriaLicencia(categoriaLicencia)) {
 
-        throw new IllegalArgumentException(
-                "La categoría de la licencia es inválida."
-        );
+           throw new IllegalArgumentException(
+                   "La categoría de la licencia es inválida."
+           );
 
-    }
+       }
 
-    this.categoriaLicencia = categoriaLicencia.trim();
-}
+       this.categoriaLicencia = categoriaLicencia.trim();
+   }
 
     
         /**
@@ -123,33 +123,33 @@ public void setCategoriaLicencia(String categoriaLicencia) {
      *
      * @return datos del conductor
      */
-@Override
-public String mostrarResumen(){
+    @Override
+    public String mostrarResumen(){
 
-    return "CONDUCTOR"
-            + "ID: " + getId() + "\n"
-            + "Nombre: " + getNombre() + "\n"
-            + "Telefono: " + getTelefono() + "\n"
-            + "Correo: " + getCorreo() + "\n"
-            + "Rut: " + getRut().getRut() + "\n"
-            + "Dirección: " 
-            + getDireccion().getCalle()
-            + ", " 
-            + getDireccion().getCiudad()
-            + ", "
-            + getDireccion().getRegion()
-            + "\n"
-            + "Numero Licencia: " + getLicencia() + "\n"
-            + "Categoria de licencia: " + getCategoriaLicencia() + "\n";
+        return "CONDUCTOR"
+                + "ID: " + getId() + "\n"
+                + "Nombre: " + getNombre() + "\n"
+                + "Telefono: " + getTelefono() + "\n"
+                + "Correo: " + getCorreo() + "\n"
+                + "Rut: " + getRut().getRut() + "\n"
+                + "Dirección: " 
+                + getDireccion().getCalle()
+                + ", " 
+                + getDireccion().getCiudad()
+                + ", "
+                + getDireccion().getRegion()
+                + "\n"
+                + "Numero Licencia: " + getLicencia() + "\n"
+                + "Categoria de licencia: " + getCategoriaLicencia() + "\n";
 
-}
-@Override
-public String toString() {
+    }
+    @Override
+    public String toString() {
 
-    return super.toString()
-  + "\nTipo de licencia: " + licencia
-            + "\nCategoria de la Licencia: " + categoriaLicencia;
+        return super.toString()
+      + "\nTipo de licencia: " + licencia
+                + "\nCategoria de la Licencia: " + categoriaLicencia;
 
-}
+    }
 }
 

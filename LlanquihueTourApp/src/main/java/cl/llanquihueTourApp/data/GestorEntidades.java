@@ -82,51 +82,51 @@ public class GestorEntidades {
     }
 
     /**
- * Genera un nuevo identificador para las entidades
- * que heredan de Persona.
- *
- * Busca el ID mayor existente y suma 1.
- *
- * @return nuevo ID disponible
- */
-public int generarNuevoId(){
+     * Genera un nuevo identificador para las entidades
+     * que heredan de Persona.
+     *
+     * Busca el ID mayor existente y suma 1.
+     *
+     * @return nuevo ID disponible
+     */
+    public int generarNuevoId(){
 
-    int mayor = 0;
+        int mayor = 0;
 
-    for(Registrable entidad : entidades){
+        for(Registrable entidad : entidades){
 
-        if(entidad instanceof Persona persona){
+            if(entidad instanceof Persona persona){
 
-            if(persona.getId() > mayor){
-                mayor = persona.getId();
+                if(persona.getId() > mayor){
+                    mayor = persona.getId();
+                }
+
             }
-
         }
-    }
 
-    return mayor + 1;
-}
+        return mayor + 1;
+    }
 
     /**
      * Muestra el resumen de todas las entidades.
      *
      * Recorre la colección aplicando polimorfismo.
      */
-public String mostrarEntidades() {
+    public String mostrarEntidades() {
 
-    StringBuilder resultado = new StringBuilder();
+        StringBuilder resultado = new StringBuilder();
 
-    for (Registrable entidad : entidades) {
+        for (Registrable entidad : entidades) {
 
-        resultado.append(entidad.mostrarResumen());
+            resultado.append(entidad.mostrarResumen());
 
-        resultado.append("\n--------------------\n");
+            resultado.append("\n--------------------\n");
+
+        }
+
+        return resultado.toString();
 
     }
-
-    return resultado.toString();
-
-}
 
     /**
      * Recorre las entidades identificando

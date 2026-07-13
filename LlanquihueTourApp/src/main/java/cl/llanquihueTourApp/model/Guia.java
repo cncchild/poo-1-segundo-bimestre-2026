@@ -137,34 +137,34 @@ private String idioma;
      *
      * @return datos del guía
      */
- @Override
-public String mostrarResumen() {
+    @Override
+    public String mostrarResumen() {
 
-    return "GUÍA TURÍSTICO"
-             + "ID: " + getId() + "\n"
-            + "Nombre: " + getNombre() + "\n"
-            + "Telefono: " + getTelefono() + "\n"
-            + "Correo: " + getCorreo() + "\n"
-            + "Rut: " + getRut().getRut() + "\n"
-            + "Dirección: " 
-            + getDireccion().getCalle()
-            + ", " 
-            + getDireccion().getCiudad()
-            + ", "
-            + getDireccion().getRegion()
-            + "\n"
-            + "Especialidad: " + getEspecialidad()
-            + "\nIdioma: " + getIdioma();
+        return "GUÍA TURÍSTICO"
+                 + "ID: " + getId() + "\n"
+                + "Nombre: " + getNombre() + "\n"
+                + "Telefono: " + getTelefono() + "\n"
+                + "Correo: " + getCorreo() + "\n"
+                + "Rut: " + getRut().getRut() + "\n"
+                + "Dirección: " 
+                + getDireccion().getCalle()
+                + ", " 
+                + getDireccion().getCiudad()
+                + ", "
+                + getDireccion().getRegion()
+                + "\n"
+                + "Especialidad: " + getEspecialidad()
+                + "\nIdioma: " + getIdioma();
 
-}
-@Override
-public String toString() {
+    }
+    @Override
+    public String toString() {
 
-    return super.toString()
-           + "\nEspecialidad: " + getEspecialidad()
-+ "\nIdioma: " + getIdioma();
+        return super.toString()
+               + "\nEspecialidad: " + getEspecialidad()
+    + "\nIdioma: " + getIdioma();
 
-}
+    }
    
 
 }

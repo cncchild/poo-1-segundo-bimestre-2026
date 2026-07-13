@@ -267,6 +267,6 @@ public String toString(){
             + "\nDirección: " + direccion
             + "\nRut: " + rut;
 
-}
+    }
 }
 

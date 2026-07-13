@@ -158,9 +158,6 @@ public class Embarcacion extends Transporte {
 
     }
 
-
-
-
     /**
      * Retorna la información completa
      * de la embarcación.

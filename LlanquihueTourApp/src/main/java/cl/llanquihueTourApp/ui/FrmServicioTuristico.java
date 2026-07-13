@@ -87,41 +87,41 @@ public class FrmServicioTuristico extends javax.swing.JFrame {
    }
    private void actualizarCampos() {
 
-  if (CmbTipoServicio.getSelectedItem() == null) {
-        return;
+    if (CmbTipoServicio.getSelectedItem() == null) {
+          return;
+      }
+
+      String tipo = CmbTipoServicio.getSelectedItem().toString();
+
+      switch (tipo) {
+
+            case "Paseo Lacustre":
+
+                lblDato1.setText("Lago");
+                lblDato2.setText("Tipo de recorrido");
+                lblDato3.setText("Tipo de embarcación");
+
+                break;
+
+
+            case "Ruta Gastronómica":
+
+                lblDato1.setText("Restaurante");
+                lblDato2.setText("Tipo gastronomía");
+                lblDato3.setText("Cantidad de paradas");
+
+                break;
+
+
+            case "Excursión Cultural":
+
+                lblDato1.setText("Lugar cultural");
+                lblDato2.setText("Tipo patrimonio");
+                lblDato3.setText("Entrada incluida");
+
+                break;
+        }
     }
-
-    String tipo = CmbTipoServicio.getSelectedItem().toString();
-
-    switch (tipo) {
-
-        case "Paseo Lacustre":
-
-            lblDato1.setText("Lago");
-            lblDato2.setText("Tipo de recorrido");
-            lblDato3.setText("Tipo de embarcación");
-
-            break;
-
-
-        case "Ruta Gastronómica":
-
-            lblDato1.setText("Restaurante");
-            lblDato2.setText("Tipo gastronomía");
-            lblDato3.setText("Cantidad de paradas");
-
-            break;
-
-
-        case "Excursión Cultural":
-
-            lblDato1.setText("Lugar cultural");
-            lblDato2.setText("Tipo patrimonio");
-            lblDato3.setText("Entrada incluida");
-
-            break;
-    }
-}
 
     /**
      * This method is called from within the constructor to initialize the form.
