@@ -34,7 +34,7 @@ public class GestorEntidades {
      * Colección polimórfica de entidades.
      */
     private ArrayList<Registrable> entidades;
-public void limpiarEntidades(){
+    public void limpiarEntidades(){
 
     entidades.clear();
 

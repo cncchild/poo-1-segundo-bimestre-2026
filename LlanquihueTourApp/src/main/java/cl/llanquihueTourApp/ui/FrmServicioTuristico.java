@@ -34,8 +34,11 @@ public class FrmServicioTuristico extends javax.swing.JFrame {
    public FrmServicioTuristico(GestorEntidades gestor) {
        initComponents();
 
+
     this.gestor = gestor;
 
+    cargarGuias();
+    cargarTransportes();
 
     CmbTipoServicio.removeAllItems();
 
@@ -49,7 +52,38 @@ public class FrmServicioTuristico extends javax.swing.JFrame {
 
 
     actualizarCampos();
-       
+
+
+}
+    
+   private void cargarGuias() {
+
+    cmbGuia.removeAllItems();
+
+       for (Registrable r : gestor.getEntidades()) {
+
+        if (r instanceof Guia guia) {
+
+            cmbGuia.addItem(guia.getNombre());
+
+        }
+
+    }
+
+}
+        private void cargarTransportes() {
+
+    cmbTransporte.removeAllItems();
+
+    for (Registrable r : gestor.getEntidades()) {
+
+        if (r instanceof Transporte transporte) {
+
+            cmbTransporte.addItem(transporte.getIdentificador());
+
+        }
+
+    }
    }
    private void actualizarCampos() {
 
@@ -88,7 +122,7 @@ public class FrmServicioTuristico extends javax.swing.JFrame {
             break;
     }
 }
- 
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -125,7 +159,9 @@ public class FrmServicioTuristico extends javax.swing.JFrame {
         lblDato3 = new javax.swing.JLabel();
         TxtDato3 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        IngreseGuia = new javax.swing.JTextField();
+        Transporte = new javax.swing.JLabel();
+        cmbGuia = new javax.swing.JComboBox<>();
+        cmbTransporte = new javax.swing.JComboBox<>();
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -133,183 +169,228 @@ public class FrmServicioTuristico extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(204, 153, 255));
+        jPanel1.setBackground(new java.awt.Color(55, 55, 55));
+        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
+
+        Header.setBackground(new java.awt.Color(90, 87, 87));
 
         Titulo.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
-        Titulo.setText("REGISTRAR SERVICIO TURISTICO");
+        Titulo.setForeground(new java.awt.Color(255, 255, 255));
+        Titulo.setText("Registrar servicio turistico");
 
         javax.swing.GroupLayout HeaderLayout = new javax.swing.GroupLayout(Header);
         Header.setLayout(HeaderLayout);
         HeaderLayout.setHorizontalGroup(
             HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HeaderLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(HeaderLayout.createSequentialGroup()
+                .addGap(127, 127, 127)
                 .addComponent(Titulo)
-                .addGap(103, 103, 103))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         HeaderLayout.setVerticalGroup(
             HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(HeaderLayout.createSequentialGroup()
-                .addGap(29, 29, 29)
+                .addGap(26, 26, 26)
                 .addComponent(Titulo)
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
+        jPanel2.setBackground(new java.awt.Color(90, 87, 87));
+        jPanel2.setPreferredSize(new java.awt.Dimension(410, 65));
+
         jLabel1.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
-        jLabel1.setText("LLANQUIHUE TOUR");
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("LLANQUIHUE TOUR APP");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(185, 185, 185)
+                .addGap(139, 139, 139)
                 .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(40, 40, 40)
+                .addGap(16, 16, 16)
                 .addComponent(jLabel1)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
+        Nombre.setForeground(new java.awt.Color(255, 255, 255));
         Nombre.setText("Nombre");
 
+        IngreseNombre.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         IngreseNombre.addActionListener(this::IngreseNombreActionPerformed);
 
+        Descripcion.setForeground(new java.awt.Color(255, 255, 255));
         Descripcion.setText("Descripción");
 
         IngreseDescripcion.addActionListener(this::IngreseDescripcionActionPerformed);
 
+        Duracion.setForeground(new java.awt.Color(255, 255, 255));
         Duracion.setText("Duracion");
 
         IngreseDuracion.addActionListener(this::IngreseDuracionActionPerformed);
 
+        Precio.setForeground(new java.awt.Color(255, 255, 255));
         Precio.setText("Precio");
 
         IngresePrecio.addActionListener(this::IngresePrecioActionPerformed);
 
+        TipoServicio.setForeground(new java.awt.Color(255, 255, 255));
         TipoServicio.setText("Tipo de servicio");
 
+        Guardar.setBackground(new java.awt.Color(70, 168, 61));
+        Guardar.setForeground(new java.awt.Color(255, 255, 255));
         Guardar.setText("Guardar");
+        Guardar.setPreferredSize(new java.awt.Dimension(100, 30));
         Guardar.addActionListener(this::GuardarActionPerformed);
 
+        Volver.setBackground(new java.awt.Color(61, 98, 168));
+        Volver.setForeground(new java.awt.Color(255, 255, 255));
         Volver.setText("Volver");
+        Volver.setPreferredSize(new java.awt.Dimension(100, 30));
         Volver.addActionListener(this::VolverActionPerformed);
 
+        VerRegistro.setBackground(new java.awt.Color(255, 0, 0));
+        VerRegistro.setForeground(new java.awt.Color(255, 255, 255));
         VerRegistro.setText("Ver registro");
+        VerRegistro.setMaximumSize(new java.awt.Dimension(100, 30));
+        VerRegistro.setMinimumSize(new java.awt.Dimension(100, 30));
         VerRegistro.addActionListener(this::VerRegistroActionPerformed);
 
         CmbTipoServicio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         CmbTipoServicio.addActionListener(this::CmbTipoServicioActionPerformed);
 
+        lblDato1.setForeground(new java.awt.Color(255, 255, 255));
         lblDato1.setText("Dato1");
 
         TxtDato1.addActionListener(this::TxtDato1ActionPerformed);
 
+        lblDato2.setForeground(new java.awt.Color(255, 255, 255));
         lblDato2.setText("Dato 2");
 
         TxtDato2.addActionListener(this::TxtDato2ActionPerformed);
 
+        lblDato3.setForeground(new java.awt.Color(255, 255, 255));
         lblDato3.setText("Dato 3");
 
         TxtDato3.addActionListener(this::TxtDato3ActionPerformed);
 
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Guia");
 
-        IngreseGuia.addActionListener(this::IngreseGuiaActionPerformed);
+        Transporte.setForeground(new java.awt.Color(255, 255, 255));
+        Transporte.setText("Transporte");
+
+        cmbGuia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbGuia.addActionListener(this::cmbGuiaActionPerformed);
+
+        cmbTransporte.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbTransporte.addActionListener(this::cmbTransporteActionPerformed);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Header, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 572, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(73, 73, 73)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(62, 62, 62)
-                        .addComponent(Duracion))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(52, 52, 52)
+                    .addComponent(Nombre)
+                    .addComponent(Descripcion)
+                    .addComponent(IngreseDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Duracion)
+                    .addComponent(IngreseDuracion, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Precio)
+                    .addComponent(IngreseNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(IngresePrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblDato1)
+                            .addComponent(lblDato2)
+                            .addComponent(TxtDato2, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblDato3)
+                            .addComponent(TxtDato3, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(TipoServicio)
+                                .addGap(29, 29, 29)
+                                .addComponent(CmbTipoServicio, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(TxtDato1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel2)
+                                .addComponent(Transporte))
+                            .addGap(55, 55, 55)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(lblDato2)
-                                .addComponent(Descripcion)
-                                .addComponent(Nombre)
-                                .addComponent(IngreseNombre)
-                                .addComponent(IngreseDescripcion)
-                                .addComponent(IngreseDuracion)
-                                .addComponent(IngresePrecio)
-                                .addComponent(CmbTipoServicio, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(Guardar)
-                                    .addGap(38, 38, 38)
-                                    .addComponent(Volver)
-                                    .addGap(62, 62, 62)
-                                    .addComponent(VerRegistro))
-                                .addComponent(TxtDato1)
-                                .addComponent(TxtDato2)
-                                .addComponent(Precio)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGap(6, 6, 6)
-                                    .addComponent(lblDato1))
-                                .addComponent(IngreseGuia, javax.swing.GroupLayout.DEFAULT_SIZE, 442, Short.MAX_VALUE))
-                            .addComponent(TxtDato3, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2)
-                            .addComponent(TipoServicio))))
-                .addContainerGap(87, Short.MAX_VALUE))
+                                .addComponent(cmbGuia, 0, 281, Short.MAX_VALUE)
+                                .addComponent(cmbTransporte, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGap(8, 8, 8))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(Guardar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(54, 54, 54)
+                            .addComponent(Volver, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(46, 46, 46)
+                            .addComponent(VerRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(99, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(Header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(52, 52, 52)
+                .addGap(24, 24, 24)
                 .addComponent(Nombre)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(IngreseNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(IngreseNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
                 .addComponent(Descripcion)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(IngreseDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(IngreseDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
                 .addComponent(Duracion)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(IngreseDuracion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(IngreseDuracion, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Precio)
-                .addGap(2, 2, 2)
-                .addComponent(IngresePrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(IngreseGuia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(8, 8, 8)
-                .addComponent(TipoServicio)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(CmbTipoServicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(IngresePrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(52, 52, 52)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cmbTransporte, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Transporte)))
+                    .addComponent(cmbGuia, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CmbTipoServicio, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TipoServicio))
+                .addGap(19, 19, 19)
                 .addComponent(lblDato1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TxtDato1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(TxtDato1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblDato2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TxtDato2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblDato3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(TxtDato3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(TxtDato2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblDato3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(TxtDato3, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Guardar)
-                    .addComponent(Volver)
-                    .addComponent(VerRegistro))
-                .addGap(40, 40, 40)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Guardar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Volver, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(VerRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(33, 33, 33)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -360,10 +441,11 @@ public class FrmServicioTuristico extends javax.swing.JFrame {
         String lago = TxtDato1.getText();
         String recorrido = TxtDato2.getText();
         String embarcacion = TxtDato3.getText();
+Guia guia = (Guia) cmbGuia.getSelectedItem();
 
-        // FALTA obtener un guía y un transporte
-        Guia guia = null;
-        Transporte transporte = null;
+Transporte transporte =
+        (Transporte) cmbTransporte.getSelectedItem();
+   
 
         PaseoLacustre paseo = new PaseoLacustre(
                 id,
@@ -384,6 +466,7 @@ public class FrmServicioTuristico extends javax.swing.JFrame {
                 this,
                 "Servicio registrado correctamente."
         );
+
 
     } catch (Exception e) {
 
@@ -417,9 +500,13 @@ public class FrmServicioTuristico extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TxtDato3ActionPerformed
 
-    private void IngreseGuiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngreseGuiaActionPerformed
+    private void cmbGuiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbGuiaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_IngreseGuiaActionPerformed
+    }//GEN-LAST:event_cmbGuiaActionPerformed
+
+    private void cmbTransporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbTransporteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbTransporteActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> CmbTipoServicio;
@@ -429,18 +516,20 @@ public class FrmServicioTuristico extends javax.swing.JFrame {
     private javax.swing.JPanel Header;
     private javax.swing.JTextField IngreseDescripcion;
     private javax.swing.JTextField IngreseDuracion;
-    private javax.swing.JTextField IngreseGuia;
     private javax.swing.JTextField IngreseNombre;
     private javax.swing.JTextField IngresePrecio;
     private javax.swing.JLabel Nombre;
     private javax.swing.JLabel Precio;
     private javax.swing.JLabel TipoServicio;
     private javax.swing.JLabel Titulo;
+    private javax.swing.JLabel Transporte;
     private javax.swing.JTextField TxtDato1;
     private javax.swing.JTextField TxtDato2;
     private javax.swing.JTextField TxtDato3;
     private javax.swing.JButton VerRegistro;
     private javax.swing.JButton Volver;
+    private javax.swing.JComboBox<String> cmbGuia;
+    private javax.swing.JComboBox<String> cmbTransporte;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
