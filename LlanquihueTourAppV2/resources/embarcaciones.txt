@@ -1,0 +1,2 @@
+1;MAT001;25;Disponible;1;Catamarán;14.5
+2;MAT002;18;Disponible;2;Lancha;10.8

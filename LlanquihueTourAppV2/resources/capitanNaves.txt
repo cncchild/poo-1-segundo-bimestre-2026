@@ -1,0 +1,2 @@
+1;Carlos Fert;987111111;carlos@tour.cl;Los Alamos;Vitacura;Region Metropolitana;12345678-9;NA-4501;Clase A
+2;Ana Clark;987222222;ana@tour.cl;Las Rosas;Melipilla;Region Metropolitana;11111111-1;NA-7820;Clase B

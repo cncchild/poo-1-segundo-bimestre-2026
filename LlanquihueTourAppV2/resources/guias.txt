@@ -1,0 +1,7 @@
+1;Carlos Fuentes;987111111;carlos@tour.cl;Los Pinos;Santiago;Region Metropolitana;12345678-9;Treking;Ingles
+2;Ana Rojas;987222222;ana@tour.cl;Las Flores;Maipu;Region Metropolitana;11111111-1;Gastronomia;Español
+3;cristian;98989874;cc@.cl;los cedros 698;santiago;metropolitana;13084616-5;teking;español
+4;cristian;98989869;ccc@.cl;los cedros 687;samtiago;metropolitana;13084616-5;treking;español
+5;cristian;98989769;ccc@.cl;los cedros 698;santiago;metropolitana;13084616-5;treking;español
+6;cristian;98989874;ccc@gmail.com;los cedros 689;santiago;metripolitana;13084616-5;treking;español
+7;Cristian contreras;98989869;ccc@gmail.com;los cedros 687;santiago;metropolitana;13084616-5;treking;español

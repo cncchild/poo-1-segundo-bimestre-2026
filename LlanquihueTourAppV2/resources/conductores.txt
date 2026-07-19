@@ -1,0 +1,2 @@
+1;Gonzalo Fuentes;987111111;gonzalo@conduciendo.cl;Los Pinos;Santiago;Region Metropolitana;12345678-5;Ch-5050;A3
+2;Mabel Rojas;987222222;mabel@conduciendo.cl;Las Flores;Maipu;Region Metropolitana;11111111-5;Ch-3350;A2
